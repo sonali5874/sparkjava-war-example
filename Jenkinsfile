@@ -4,15 +4,11 @@ pipeline {
         PATH = "/opt/maven/bin:$PATH"
     }
     stages {
-        stage('git clone') {
-            steps {
-                git url: "https://github.com/sonali5874/sparkjava-war-example.git" , branch: 'master'
-            }
-        }
-        stage('build') {
+       stage('build') {
             steps {
                 sh 'mvn clean install'
             }
         }
-    }
 }
+}
+ 
